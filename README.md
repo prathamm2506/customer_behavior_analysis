@@ -52,34 +52,6 @@ The `queries.sql` file contains 10 SQL queries for analysis. These can be run on
 9. **Repeat Buyers and Subscription**: Likelihood of subscription among repeat buyers (>5 purchases).
 10. **Revenue by Age Group**: Total revenue contribution per age group.
 
-## Requirements
-- Python 3.x
-- Libraries: pandas, pandasql (for SQL queries in Python)
-- Jupyter Notebook (for running the cleaning script)
-
-Install dependencies:
-```
-pip install pandas pandasql jupyter
-```
-
-## Usage
-1. **Data Cleaning**:
-   - Open `Customer_Shopping_Behavior.ipynb` in Jupyter.
-   - Run the cells to clean the data and generate `cleaned_data.csv`.
-
-2. **Running Queries**:
-   - Use pandasql in a Python script or notebook to execute the queries on `cleaned_data.csv`.
-   - Example Python script to run queries:
-     ```python
-     import pandas as pd
-     import pandasql as ps
-
-     df = pd.read_csv('cleaned_data.csv')
-     # Example: Run Q1
-     query = "SELECT gender, SUM(purchase_amount) as revenue FROM df GROUP BY gender;"
-     result = ps.sqldf(query, locals())
-     print(result)
-     ```
 
 3. **Reports**:
    - View generated reports: `Customer Behavior Analysis Report.pdf`, `Customer-Shopping-Behavior-Analysis.pdf`.
